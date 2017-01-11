@@ -1,4 +1,4 @@
-Sitemap: http://georgetsilva@github.io/sitemapindex.xml
+Sitemap: https://georgetsilva.github.io/sitemapindex.xml
 
 User-Agent: *
-Host: georgetsilva@github.io
+Host: georgetsilva.github.io

@@ -6,19 +6,19 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
-  <loc>http://georgetsilva@github.io/categories/nikola.xml</loc>
-  <lastmod>2017-01-11T03:59:00Z</lastmod>
+  <loc>https://georgetsilva.github.io/categories/nikola.xml</loc>
+  <lastmod>2017-01-11T20:05:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://georgetsilva@github.io/galleries/rss.xml</loc>
-  <lastmod>2017-01-11T04:04:00Z</lastmod>
+  <loc>https://georgetsilva.github.io/galleries/rss.xml</loc>
+  <lastmod>2017-01-11T20:05:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://georgetsilva@github.io/rss.xml</loc>
-  <lastmod>2017-01-11T03:59:00Z</lastmod>
+  <loc>https://georgetsilva.github.io/rss.xml</loc>
+  <lastmod>2017-01-11T20:05:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://georgetsilva@github.io/sitemap.xml</loc>
-  <lastmod>2017-01-11T04:04:00Z</lastmod>
+  <loc>https://georgetsilva.github.io/sitemap.xml</loc>
+  <lastmod>2017-01-11T20:05:00Z</lastmod>
  </sitemap>
 </sitemapindex>

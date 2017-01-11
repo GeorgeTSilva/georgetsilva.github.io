@@ -135,7 +135,7 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ('/', 'Home', 'icon-home'),
-        ('/archive/', 'Archives', 'icon-folder-open-alt'),
+        ('/archive.html', 'Archives', 'icon-folder-open-alt'),
         ('/categories/', 'Tags', 'icon-tags'),
         ('/rss.xml', 'RSS', 'icon-rss'),
         ('https://www.linkedin.com/in/georgesilva1', 'About me', 'icon-user'),

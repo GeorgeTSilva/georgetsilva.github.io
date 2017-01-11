@@ -21,10 +21,10 @@ BLOG_AUTHOR = "George T. Silva"  # (translatable)
 BLOG_TITLE = "Data EconoScientist"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "http://georgetsilva@github.io/"
+SITE_URL = "https://georgetsilva.github.io/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
-# BASE_URL = "http://georgetsilva@github.io/"
+# BASE_URL = "https://georgetsilva.github.io/"
 BLOG_EMAIL = "georges083+github@gmail.com"
 BLOG_DESCRIPTION = "Economist's adventures in data science."  # (translatable)
 
@@ -134,9 +134,9 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/index.html', 'Home', 'icon-home'),
-        ('/archive.html', 'Archives', 'icon-folder-open-alt'),
-        ('/categories/index.html', 'Tags', 'icon-tags'),
+        ('/', 'Home', 'icon-home'),
+        ('/archive/', 'Archives', 'icon-folder-open-alt'),
+        ('/categories/', 'Tags', 'icon-tags'),
         ('/rss.xml', 'RSS', 'icon-rss'),
         ('https://www.linkedin.com/in/georgesilva1', 'About me', 'icon-user'),
         ('https://twitter.com/georges083', 'My Twitter', 'icon-twitter'),

@@ -138,7 +138,7 @@ NAVIGATION_LINKS = {
         ('/archive.html', 'Archives', 'icon-folder-open-alt'),
         ('/categories/', 'Tags', 'icon-tags'),
         ('/rss.xml', 'RSS', 'icon-rss'),
-        ('https://www.linkedin.com/in/georgesilva1', 'About me', 'icon-user'),
+        ('https://www.linkedin.com/in/georgesilva1', 'About me', 'icon-linkedin'),
         ('https://twitter.com/georges083', 'My Twitter', 'icon-twitter'),
         ('https://github.com/georgetsilva', 'My Github', 'icon-github'),
     )

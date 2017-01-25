@@ -3328,3 +3328,11 @@ div.text_cell_render {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+h2 .title {
+  color: #2e2e2e;
+}
+
+.content p {
+	margin: 0 0 12px;
+}

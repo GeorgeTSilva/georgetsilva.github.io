@@ -25,8 +25,8 @@ SITE_URL = "https://georgetsilva.github.io/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://georgetsilva.github.io/"
-BLOG_EMAIL = "georges083+github@gmail.com"
-BLOG_DESCRIPTION = "Economist's adventures in data science."  # (translatable)
+BLOG_EMAIL = "dataeconoscientist@gmail.com"
+BLOG_DESCRIPTION = "An economist's adventures in data science."  # (translatable)
 
 # Nikola is multilingual!
 #

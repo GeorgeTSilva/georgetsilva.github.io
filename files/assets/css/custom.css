@@ -1,7 +1,6 @@
-h2 .title {
+.page-content > .content h2, .page-content > .content h2 a {
   color: #2e2e2e;
 }
-
-.content p {
+.page-content > .content p {
 	margin: 0 0 12px;
 }

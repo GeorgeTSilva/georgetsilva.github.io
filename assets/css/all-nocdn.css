@@ -3329,10 +3329,9 @@ div.text_cell_render {
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
 
-h2 .title {
+.page-content > .content h2, .page-content > .content h2 a {
   color: #2e2e2e;
 }
-
-.content p {
+.page-content > .content p {
 	margin: 0 0 12px;
 }

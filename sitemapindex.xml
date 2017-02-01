@@ -6,6 +6,10 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://georgetsilva.github.io/categories/folium.xml</loc>
+  <lastmod>2017-02-01T16:41:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://georgetsilva.github.io/categories/nikola.xml</loc>
   <lastmod>2017-01-11T20:05:00Z</lastmod>
  </sitemap>
@@ -15,10 +19,10 @@
  </sitemap>
  <sitemap>
   <loc>https://georgetsilva.github.io/rss.xml</loc>
-  <lastmod>2017-01-25T03:40:00Z</lastmod>
+  <lastmod>2017-02-01T16:41:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://georgetsilva.github.io/sitemap.xml</loc>
-  <lastmod>2017-01-25T03:40:00Z</lastmod>
+  <lastmod>2017-02-01T16:41:00Z</lastmod>
  </sitemap>
 </sitemapindex>

@@ -14,7 +14,7 @@ article: http://ogp.me/ns/article#
 <meta property="og:site_name" content="Data EconoScientist">
 <meta property="og:title" content="Pedestrian Growth Trends on Arlington's Trails">
 <meta property="og:url" content="https://georgetsilva.github.io/posts/pedestrian-growth-trends-on-arlingtons-trails/">
-<meta property="og:description" content="Building off my previous work on Arlington Bikeometer data and mapping points with Folium, I decided to contribute something to the upcoming Walk Hack Night II. While I'm not able to attend this event">
+<meta property="og:description" content="Building off my previous work on Arlington's Bikeometer data and mapping points with Folium, I decided to contribute something to the upcoming Walk Hack Night II. While I'm not able to attend this eve">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2017-02-07T21:50:04-05:00">
 <meta property="article:tag" content="Folium">
@@ -59,8 +59,8 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Building off my previous work on <a href="https://georgetsilva.github.io/posts/exploring-arlingtons-bikeometer-data/">Arlington Bikeometer data</a> and <a href="https://georgetsilva.github.io/posts/mapping-points-with-folium/">mapping points with Folium</a>, I decided to contribute something to the upcoming <a href="https://www.meetup.com/Transportation-Techies/events/236668724/">Walk Hack Night II</a>. While I'm not able to attend this event, I still wanted to be able to add to the discussion with some data visualizations about local walking trends.<!-- TEASER_END --></p>
-<p>Many of the Eco-Counter installed on Arlington's trails can count both bicycle and pedestrian traffic. I decided to look through the various counter and find ones that had data for the past three years. My plan was then to calculate annual average daily traffic for the pedestrian traffic at each counter and then map the annualized growth rate for that metric for each location.</p>
+<p>Building off my previous work on <a href="https://georgetsilva.github.io/posts/exploring-arlingtons-bikeometer-data/">Arlington's Bikeometer data</a> and <a href="https://georgetsilva.github.io/posts/mapping-points-with-folium/">mapping points with Folium</a>, I decided to contribute something to the upcoming <a href="https://www.meetup.com/Transportation-Techies/events/236668724/">Walk Hack Night II</a>. While I'm not able to attend this event, I still want to contribute to the discussion with some data visualizations about local walking trends.<!-- TEASER_END --></p>
+<p>Many of the Eco-Counters installed on Arlington's trails can count both bicycle and pedestrian traffic. I decided to look through the various counters and find ones that had data for the past three years. My plan was then to calculate annual average daily traffic for the pedestrian traffic at each counter, and then map the annualized growth rate for that metric for each location.</p>
 <p>I used the following Python modules for this project.</p>
 
 </div>
@@ -91,7 +91,7 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Then I grabbed the counter ID numbers for the eleven stations that provided consistent data from January 1, 2014 to December 31, 2016.  Those counter IDs are listed below. When I browsed the data, I discovered some very large pedestrian counts that were obvious outliers.  Those outliers were probably the result of sensor errors. Upon further investigation, I noticed some of these outliers occurred during the evening hours, which should actually have pedestrian counts close to zero. Something strange seems to happen to these counters at night on occassion.</p>
+<p>Then I grabbed the counter ID numbers for the eleven stations that provided consistent data from January 1, 2014 to December 31, 2016.  Those counter IDs are listed below. When I browsed the data, I discovered some very large pedestrian counts that were obvious outliers.  Those outliers were probably the result of sensor errors. Upon further investigation, I noticed some of these outliers occurred during the evening hours, which should actually have pedestrian counts close to zero. Something strange seems to happen to these counters at night on occasion.</p>
 
 </div>
 </div>
@@ -115,7 +115,7 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The code below fetches the daily pedestrian count data for each counter in the list above in an xml format. I dealt with outliers by dropping above the 95th percentile and the zeroes. I then summed the inbound and outbound pedestrian counts by day. I then calculated the average daily counts for the remaining data by month and then I calculated the yearly means based on those monthly averages.  Finally, I obtained the annualize rate of growth for the average annual daily pedestrian traffic numbers.  These statistics are reported below the following Python code.</p>
+<p>The code below fetches the daily pedestrian count data for each counter in the list above. I dealt with outliers by dropping count data above the 95th percentile and any zero counts. I then summed the inbound and outbound pedestrian counts by day. With those daily sums, I calculated the average daily counts for the remaining data by month and then I calculated the yearly means based on those monthly averages.  Finally, I obtained the annualize rate of growth for the average annual daily pedestrian traffic numbers. These statistics are reported below the following Python code.</p>
 
 </div>
 </div>
@@ -823,7 +823,7 @@ Name: count, dtype: float64
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You can click on each circle above to get the location name and the growth rate for that point.  My quick take is that there has been an increase in walkers on the Custis Trail.  Over the same time period the Columbia Pike and Mount Vernon points indicate decreases in pedestrian traffic counts. Planners may want to really focus on the conditions at the MVT Airport South counter to see if there needs to be any improvements for pedestrians in that area.</p>
+<p>You can click on each circle above to get the location name and the growth rate for that point.  My quick take is that there has been an increase in walkers on the Custis Trail.  Over the same time period, the Columbia Pike and Mount Vernon points indicate decreases in pedestrian traffic counts. Planners may want to really focus on the conditions at the MVT Airport South counter to see if there needs to be any improvements for pedestrians in that area.</p>
 <p>Please share your thoughts and ideas in the comment section below.</p>
 
 </div>

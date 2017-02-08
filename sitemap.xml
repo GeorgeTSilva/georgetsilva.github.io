@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>https://georgetsilva.github.io/archive.html</loc>
-  <lastmod>2017-02-01T22:12:00Z</lastmod>
+  <lastmod>2017-02-08T04:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://georgetsilva.github.io/categories/</loc>
@@ -52,5 +52,9 @@
  <url>
   <loc>https://georgetsilva.github.io/posts/mapping-points-with-folium/</loc>
   <lastmod>2017-02-01T16:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://georgetsilva.github.io/posts/pedestrian-growth-trends-on-arlingtons-trails/</loc>
+  <lastmod>2017-02-08T04:53:00Z</lastmod>
  </url>
 </urlset>

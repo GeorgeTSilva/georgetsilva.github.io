@@ -15,19 +15,31 @@
  </url>
  <url>
   <loc>https://georgetsilva.github.io/archive.html</loc>
-  <lastmod>2017-02-08T04:53:00Z</lastmod>
+  <lastmod>2017-05-17T17:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://georgetsilva.github.io/categories/</loc>
-  <lastmod>2017-02-01T16:41:00Z</lastmod>
+  <lastmod>2017-05-17T17:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://georgetsilva.github.io/categories/folium/</loc>
   <lastmod>2017-02-01T16:41:00Z</lastmod>
  </url>
  <url>
+  <loc>https://georgetsilva.github.io/categories/machine-learning/</loc>
+  <lastmod>2017-05-17T17:40:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://georgetsilva.github.io/categories/nikola/</loc>
   <lastmod>2017-01-11T03:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://georgetsilva.github.io/categories/scikit-learn/</loc>
+  <lastmod>2017-05-17T17:40:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://georgetsilva.github.io/categories/tpot/</loc>
+  <lastmod>2017-05-17T17:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://georgetsilva.github.io/galleries/</loc>
@@ -40,6 +52,10 @@
  <url>
   <loc>https://georgetsilva.github.io/posts/about-george-t-silva/</loc>
   <lastmod>2017-01-17T04:10:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://georgetsilva.github.io/posts/custis-trail-bike-count-forecaster/</loc>
+  <lastmod>2017-05-17T17:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://georgetsilva.github.io/posts/exploring-arlingtons-bikeometer-data/</loc>

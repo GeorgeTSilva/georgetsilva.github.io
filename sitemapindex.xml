@@ -6,35 +6,39 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://georgetsilva.github.io/categories/cat_posts.xml</loc>
+  <lastmod>2019-03-06T15:03:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://georgetsilva.github.io/categories/folium.xml</loc>
-  <lastmod>2017-05-17T17:40:00Z</lastmod>
+  <lastmod>2019-03-06T15:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://georgetsilva.github.io/categories/machine-learning.xml</loc>
-  <lastmod>2017-05-17T17:40:00Z</lastmod>
+  <lastmod>2019-03-06T15:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://georgetsilva.github.io/categories/nikola.xml</loc>
-  <lastmod>2017-05-17T17:40:00Z</lastmod>
+  <lastmod>2019-03-06T15:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://georgetsilva.github.io/categories/scikit-learn.xml</loc>
-  <lastmod>2017-05-17T17:40:00Z</lastmod>
+  <lastmod>2019-03-06T15:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://georgetsilva.github.io/categories/tpot.xml</loc>
-  <lastmod>2017-05-17T17:40:00Z</lastmod>
+  <lastmod>2019-03-06T15:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://georgetsilva.github.io/galleries/rss.xml</loc>
-  <lastmod>2017-05-17T17:40:00Z</lastmod>
+  <lastmod>2019-03-06T15:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://georgetsilva.github.io/rss.xml</loc>
-  <lastmod>2017-05-17T17:40:00Z</lastmod>
+  <lastmod>2019-03-06T15:03:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://georgetsilva.github.io/sitemap.xml</loc>
-  <lastmod>2017-05-17T17:40:00Z</lastmod>
+  <lastmod>2019-03-06T15:03:00Z</lastmod>
  </sitemap>
 </sitemapindex>

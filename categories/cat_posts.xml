@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Data EconoScientist (Posts about posts)</title><link>https://georgetsilva.github.io/</link><description></description><atom:link href="https://georgetsilva.github.io/categories/cat_posts.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 06 Mar 2019 15:03:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>About George T. Silva</title><link>https://georgetsilva.github.io/posts/about-george-t-silva/</link><dc:creator>George T. Silva</dc:creator><description>&lt;div&gt;&lt;p&gt;I'm a resource economist with a passion for data analysis and
+technology. Over the past few years, I've watch the development of the
+data science field and I've become increasingly interested in the
+subject. Data science seems to complement the tools economists use to
+understand how humans allocate scarce resources. While econometrics
+tries to fit data to economic models, data science can help fill in the
+gaps between economic theories and may even help discover new economic
+models. My goal is master these new techniques of data science and share
+them with you here on this site.&lt;/p&gt;
+&lt;p&gt;I will be primarily working in the Python programming language. While
+I've used R in the past, I've come to discover that the general
+flexibility and scalability of Python will likely make it the dominate
+platform for conducting data science. Therefore, I've spent the past
+year learning Python. One of my favorite resources for getting up to
+speed with Python has been the book, &lt;em&gt;Automate the Boring Stuff with
+Python&lt;/em&gt; by Al Sweigart. After figuring out the basics of Python
+programming, I've moved on to Pandas, Folium, Requests, Selenium,
+Matplotlib, NLTK, Numpy, and Scikit-learn. It seems like I find a new
+interesting Python libraries every week now. This is quite a shift from
+my traditional economic toolset of Excel, SAS, SQL, and ArcGIS to get my
+work done.&lt;/p&gt;
+&lt;p&gt;Ultimately, I hope to blend my background in economics with the new
+techniques in data science to create some whole new methods for using
+data to learn about the world. Maybe I'll become a Data EconoScientist
+along the way.&lt;/p&gt;&lt;/div&gt;</description><guid>https://georgetsilva.github.io/posts/about-george-t-silva/</guid><pubDate>Tue, 17 Jan 2017 03:25:54 GMT</pubDate></item><item><title>Hello World</title><link>https://georgetsilva.github.io/posts/hello-world/</link><dc:creator>George T. Silva</dc:creator><description>&lt;div&gt;&lt;p&gt;Hello world! This is my first post using &lt;strong&gt;Nikola&lt;/strong&gt;. I'll be sharing my data science discoveries using Jupyter Notebooks that display my Python code and results.&lt;/p&gt;
+&lt;p&gt;I'm looking forward to exploring this relatively new field and applying it to my domain knowledge in resource economics.&lt;/p&gt;&lt;/div&gt;</description><category>Nikola</category><guid>https://georgetsilva.github.io/posts/hello-world/</guid><pubDate>Wed, 11 Jan 2017 03:54:55 GMT</pubDate></item></channel></rss>

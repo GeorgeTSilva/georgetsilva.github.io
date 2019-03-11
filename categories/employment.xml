@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Data EconoScientist</title><link>https://georgetsilva.github.io/</link><description>An economist's adventures in data science.</description><atom:link href="https://georgetsilva.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 11 Mar 2019 02:10:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Friday Jobs Report Numbers in Python</title><link>https://georgetsilva.github.io/posts/friday-jobs-report-numbers-in-python/</link><dc:creator>George T. Silva</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Data EconoScientist (Posts about employment)</title><link>https://georgetsilva.github.io/</link><description></description><atom:link href="https://georgetsilva.github.io/categories/employment.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 11 Mar 2019 02:10:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Friday Jobs Report Numbers in Python</title><link>https://georgetsilva.github.io/posts/friday-jobs-report-numbers-in-python/</link><dc:creator>George T. Silva</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;One of the most popular economic reports comes out the first Friday of every month. It is call the Employment Situation Summary, but it is also referred to as the &lt;strong&gt;Friday Jobs Report&lt;/strong&gt; by the financial media. I'm going to use the Python &lt;em&gt;pandas&lt;/em&gt; data analysis library and &lt;em&gt;pandas-datareader&lt;/em&gt; library to retrieve the latest employment numbers.&lt;/p&gt;
@@ -667,62 +667,4 @@ Name: pct_change, dtype: float64&lt;/pre&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>employment</category><category>pandas</category><category>pandas-datareader</category><guid>https://georgetsilva.github.io/posts/friday-jobs-report-numbers-in-python/</guid><pubDate>Sun, 10 Mar 2019 20:24:20 GMT</pubDate></item><item><title>Custis Trail Bike Count Forecaster</title><link>https://georgetsilva.github.io/posts/custis-trail-bike-count-forecaster/</link><dc:creator>George T. Silva</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;In this article, I will step through the process of forecasting the number of bicycles traveling on the Custis trail daily by using sophisticated machine learning techniques.  Originally, I was planning on using data from the Bikeometer in Rosslyn, but it has been offline since March 25th. &lt;/p&gt;&lt;p&gt;&lt;a href="https://georgetsilva.github.io/posts/custis-trail-bike-count-forecaster/"&gt;Read more…&lt;/a&gt; (17 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>machine learning</category><category>scikit-learn</category><category>TPOT</category><guid>https://georgetsilva.github.io/posts/custis-trail-bike-count-forecaster/</guid><pubDate>Wed, 17 May 2017 17:30:48 GMT</pubDate></item><item><title>Pedestrian Growth Trends on Arlington's Trails</title><link>https://georgetsilva.github.io/posts/pedestrian-growth-trends-on-arlingtons-trails/</link><dc:creator>George T. Silva</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Building off my previous work on &lt;a href="https://georgetsilva.github.io/posts/exploring-arlingtons-bikeometer-data/"&gt;Arlington's Bikeometer data&lt;/a&gt; and &lt;a href="https://georgetsilva.github.io/posts/mapping-points-with-folium/"&gt;mapping points with Folium&lt;/a&gt;, I decided to contribute something to the upcoming &lt;a href="https://www.meetup.com/Transportation-Techies/events/236668724/"&gt;Walk Hack Night II&lt;/a&gt;. While I'm not able to attend this event, I still want to contribute to the discussion with some data visualizations about local walking trends.&lt;/p&gt;&lt;p&gt;&lt;a href="https://georgetsilva.github.io/posts/pedestrian-growth-trends-on-arlingtons-trails/"&gt;Read more…&lt;/a&gt; (9 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Folium</category><guid>https://georgetsilva.github.io/posts/pedestrian-growth-trends-on-arlingtons-trails/</guid><pubDate>Wed, 08 Feb 2017 02:50:04 GMT</pubDate></item><item><title>Mapping Points with Folium</title><link>https://georgetsilva.github.io/posts/mapping-points-with-folium/</link><dc:creator>George T. Silva</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Continuing my previous work on &lt;a href="https://georgetsilva.github.io/posts/exploring-arlingtons-bikeometer-data/"&gt;exploring Arlington's Bikeometer data&lt;/a&gt;, I have decided to look at all of Arlington's counters in this article.  My goal is to retrieve all of the counters available via the &lt;a href="http://www.bikearlington.com/tasks/sites/bike/assets/File/Regional_bikearlington_webservices.pdf"&gt;Bike Arlington web services API&lt;/a&gt; and then map them.&lt;/p&gt;
-&lt;p&gt;In order to map these points in Python, I will use the &lt;a href="https://github.com/python-visualization/folium"&gt;Folium&lt;/a&gt; module. The Folium module provides a way to feed data in Python into a &lt;a href="http://leafletjs.com/"&gt;Leaflet.js&lt;/a&gt; map. Leaflet maps are interactive, attractive, and can be directly inserted into webpages. Folium provides many options to customize these maps, and I will explore several of these options in this article.&lt;/p&gt;&lt;p&gt;&lt;a href="https://georgetsilva.github.io/posts/mapping-points-with-folium/"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>Folium</category><guid>https://georgetsilva.github.io/posts/mapping-points-with-folium/</guid><pubDate>Wed, 01 Feb 2017 12:34:12 GMT</pubDate></item><item><title>Exploring Arlington's Bikeometer Data</title><link>https://georgetsilva.github.io/posts/exploring-arlingtons-bikeometer-data/</link><dc:creator>George T. Silva</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
-    &lt;div class="container" id="notebook-container"&gt;
-
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Arlington, Virginia has this great Bikeometer on the Custis Trail in Rosslyn. This tall digital sign always catches my attention when I ride by it. It displays the number of bicycles that pass that sign daily, monthly and year to date. I discovered that this data is also available online. I decided to use my Python skills to import this data, clean it up, and do some basic analysis.&lt;/p&gt;&lt;p&gt;&lt;a href="https://georgetsilva.github.io/posts/exploring-arlingtons-bikeometer-data/"&gt;Read more…&lt;/a&gt; (6 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://georgetsilva.github.io/posts/exploring-arlingtons-bikeometer-data/</guid><pubDate>Mon, 23 Jan 2017 04:10:01 GMT</pubDate></item><item><title>About George T. Silva</title><link>https://georgetsilva.github.io/posts/about-george-t-silva/</link><dc:creator>George T. Silva</dc:creator><description>&lt;div&gt;&lt;p&gt;I'm a resource economist with a passion for data analysis and
-technology. Over the past few years, I've watch the development of the
-data science field and I've become increasingly interested in the
-subject. Data science seems to complement the tools economists use to
-understand how humans allocate scarce resources. While econometrics
-tries to fit data to economic models, data science can help fill in the
-gaps between economic theories and may even help discover new economic
-models. My goal is master these new techniques of data science and share
-them with you here on this site.&lt;/p&gt;
-&lt;p&gt;I will be primarily working in the Python programming language. While
-I've used R in the past, I've come to discover that the general
-flexibility and scalability of Python will likely make it the dominate
-platform for conducting data science. Therefore, I've spent the past
-year learning Python. One of my favorite resources for getting up to
-speed with Python has been the book, &lt;em&gt;Automate the Boring Stuff with
-Python&lt;/em&gt; by Al Sweigart. After figuring out the basics of Python
-programming, I've moved on to Pandas, Folium, Requests, Selenium,
-Matplotlib, NLTK, Numpy, and Scikit-learn. It seems like I find a new
-interesting Python libraries every week now. This is quite a shift from
-my traditional economic toolset of Excel, SAS, SQL, and ArcGIS to get my
-work done.&lt;/p&gt;
-&lt;p&gt;Ultimately, I hope to blend my background in economics with the new
-techniques in data science to create some whole new methods for using
-data to learn about the world. Maybe I'll become a Data EconoScientist
-along the way.&lt;/p&gt;&lt;/div&gt;</description><guid>https://georgetsilva.github.io/posts/about-george-t-silva/</guid><pubDate>Tue, 17 Jan 2017 03:25:54 GMT</pubDate></item><item><title>Hello World</title><link>https://georgetsilva.github.io/posts/hello-world/</link><dc:creator>George T. Silva</dc:creator><description>&lt;div&gt;&lt;p&gt;Hello world! This is my first post using &lt;strong&gt;Nikola&lt;/strong&gt;. I'll be sharing my data science discoveries using Jupyter Notebooks that display my Python code and results.&lt;/p&gt;
-&lt;p&gt;I'm looking forward to exploring this relatively new field and applying it to my domain knowledge in resource economics.&lt;/p&gt;&lt;/div&gt;</description><category>Nikola</category><guid>https://georgetsilva.github.io/posts/hello-world/</guid><pubDate>Wed, 11 Jan 2017 03:54:55 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>employment</category><category>pandas</category><category>pandas-datareader</category><guid>https://georgetsilva.github.io/posts/friday-jobs-report-numbers-in-python/</guid><pubDate>Sun, 10 Mar 2019 20:24:20 GMT</pubDate></item></channel></rss>

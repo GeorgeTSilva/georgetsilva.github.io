@@ -7,23 +7,31 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://georgetsilva.github.io/</loc>
-  <lastmod>2017-01-11T03:59:00Z</lastmod>
+  <lastmod>2019-03-11T02:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://georgetsilva.github.io/2017/</loc>
   <lastmod>2017-01-11T03:59:00Z</lastmod>
  </url>
  <url>
+  <loc>https://georgetsilva.github.io/2019/</loc>
+  <lastmod>2019-03-11T02:10:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://georgetsilva.github.io/archive.html</loc>
-  <lastmod>2019-03-06T15:03:00Z</lastmod>
+  <lastmod>2019-03-11T02:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://georgetsilva.github.io/categories/</loc>
-  <lastmod>2019-03-06T15:03:00Z</lastmod>
+  <lastmod>2019-03-11T02:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://georgetsilva.github.io/categories/cat_posts/</loc>
   <lastmod>2019-03-06T15:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://georgetsilva.github.io/categories/employment/</loc>
+  <lastmod>2019-03-11T02:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://georgetsilva.github.io/categories/folium/</loc>
@@ -36,6 +44,14 @@
  <url>
   <loc>https://georgetsilva.github.io/categories/nikola/</loc>
   <lastmod>2017-01-11T03:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://georgetsilva.github.io/categories/pandas-datareader/</loc>
+  <lastmod>2019-03-11T02:10:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://georgetsilva.github.io/categories/pandas/</loc>
+  <lastmod>2019-03-11T02:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://georgetsilva.github.io/categories/scikit-learn/</loc>
@@ -64,6 +80,10 @@
  <url>
   <loc>https://georgetsilva.github.io/posts/exploring-arlingtons-bikeometer-data/</loc>
   <lastmod>2017-01-23T04:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://georgetsilva.github.io/posts/friday-jobs-report-numbers-in-python/</loc>
+  <lastmod>2019-03-11T02:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://georgetsilva.github.io/posts/hello-world/</loc>

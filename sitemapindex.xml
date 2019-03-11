@@ -10,6 +10,10 @@
   <lastmod>2019-03-06T15:03:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://georgetsilva.github.io/categories/employment.xml</loc>
+  <lastmod>2019-03-11T02:10:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://georgetsilva.github.io/categories/folium.xml</loc>
   <lastmod>2019-03-06T15:03:00Z</lastmod>
  </sitemap>
@@ -20,6 +24,14 @@
  <sitemap>
   <loc>https://georgetsilva.github.io/categories/nikola.xml</loc>
   <lastmod>2019-03-06T15:03:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://georgetsilva.github.io/categories/pandas-datareader.xml</loc>
+  <lastmod>2019-03-11T02:10:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://georgetsilva.github.io/categories/pandas.xml</loc>
+  <lastmod>2019-03-11T02:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://georgetsilva.github.io/categories/scikit-learn.xml</loc>
@@ -35,10 +47,10 @@
  </sitemap>
  <sitemap>
   <loc>https://georgetsilva.github.io/rss.xml</loc>
-  <lastmod>2019-03-06T15:03:00Z</lastmod>
+  <lastmod>2019-03-11T02:10:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://georgetsilva.github.io/sitemap.xml</loc>
-  <lastmod>2019-03-06T15:03:00Z</lastmod>
+  <lastmod>2019-03-11T02:10:00Z</lastmod>
  </sitemap>
 </sitemapindex>

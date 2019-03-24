@@ -14,16 +14,48 @@
   <lastmod>2017-01-11T03:59:00Z</lastmod>
  </url>
  <url>
+  <loc>https://georgetsilva.github.io/2019/</loc>
+  <lastmod>2019-03-24T21:04:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://georgetsilva.github.io/archive.html</loc>
-  <lastmod>2019-03-24T21:00:00Z</lastmod>
+  <lastmod>2019-03-24T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://georgetsilva.github.io/categories/</loc>
-  <lastmod>2019-03-24T20:57:00Z</lastmod>
+  <lastmod>2019-03-24T21:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://georgetsilva.github.io/categories/employment/</loc>
+  <lastmod>2019-03-24T21:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://georgetsilva.github.io/categories/folium/</loc>
+  <lastmod>2019-03-24T21:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://georgetsilva.github.io/categories/machine-learning/</loc>
+  <lastmod>2019-03-24T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://georgetsilva.github.io/categories/nikola/</loc>
   <lastmod>2017-01-11T03:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://georgetsilva.github.io/categories/pandas-datareader/</loc>
+  <lastmod>2019-03-24T21:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://georgetsilva.github.io/categories/pandas/</loc>
+  <lastmod>2019-03-24T21:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://georgetsilva.github.io/categories/scikit-learn/</loc>
+  <lastmod>2019-03-24T21:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://georgetsilva.github.io/categories/tpot/</loc>
+  <lastmod>2019-03-24T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://georgetsilva.github.io/galleries/</loc>
@@ -38,7 +70,27 @@
   <lastmod>2017-01-17T04:10:00Z</lastmod>
  </url>
  <url>
+  <loc>https://georgetsilva.github.io/posts/custis-trail-bike-count-forecaster/</loc>
+  <lastmod>2019-03-24T21:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://georgetsilva.github.io/posts/exploring-arlingtons-bikeometer-data/</loc>
+  <lastmod>2019-03-24T21:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://georgetsilva.github.io/posts/friday-jobs-report-numbers-in-python/</loc>
+  <lastmod>2019-03-24T21:04:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://georgetsilva.github.io/posts/hello-world/</loc>
   <lastmod>2017-01-11T03:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://georgetsilva.github.io/posts/mapping-points-with-folium/</loc>
+  <lastmod>2019-03-24T21:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://georgetsilva.github.io/posts/pedestrian-growth-trends-on-arlingtons-trails/</loc>
+  <lastmod>2019-03-24T21:04:00Z</lastmod>
  </url>
 </urlset>

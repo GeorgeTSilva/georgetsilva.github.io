@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html prefix="        og: http://ogp.me/ns# article: http://ogp.me/ns/article#     " vocab="http://ogp.me/ns" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Exploring Arlington's Bikeometer Data | Data EconoScientist</title>
+<link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
+<link rel="canonical" href="https://georgetsilva.github.io/posts/exploring-arlingtons-bikeometer-data/">
+<!--[if lt IE 9]><script src="../../assets/js/html5shiv-printshiv.min.js"></script><![endif]--><meta name="author" content="George T. Silva">
+<link rel="prev" href="../about-george-t-silva/" title="About George T. Silva" type="text/html">
+<link rel="next" href="../mapping-points-with-folium/" title="Mapping Points with Folium" type="text/html">
+<meta property="og:site_name" content="Data EconoScientist">
+<meta property="og:title" content="Exploring Arlington's Bikeometer Data">
+<meta property="og:url" content="https://georgetsilva.github.io/posts/exploring-arlingtons-bikeometer-data/">
+<meta property="og:description" content="Arlington, Virginia has this great Bikeometer on the Custis Trail in Rosslyn. This tall digital sign always catches my attention when I ride by it. It displays the number of bicycles that pass that si">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-01-22T23:10:01-05:00">
+</head>
+<body>
+    <a href="#page-content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <section class="social"><ul>
+<li><a href="../../index.html" title="Home"><i class="fa fa-home"></i></a></li>
+            <li><a href="../../archive.html" title="Archives"><i class="fa fa-folder-open"></i></a></li>
+            <li><a href="../../categories/index.html" title="Tags"><i class="fa fa-tags"></i></a></li>
+            <li><a href="../about-george-t-silva/" title="About George T. Silva"><i class="fa fa-user"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/georgesilva1" title="My LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://twitter.com/georges083" title="My Twitter"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/georgetsilva" title="My Github"><i class="fab fa-github"></i></a></li>
+            <li><a href="../../rss.xml" title="RSS"><i class="fa fa-rss"></i></a></li>
+    
+    
+
+        </ul></section><section class="page-content"><div class="content" rel="main">
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Exploring Arlington's Bikeometer Data</a></h1>
+
+        <div class="metadata">
+            <p class="dateline"><a href="." rel="bookmark"><i class="fa fa-clock"></i> <time class="published dt-published" datetime="2017-01-22T23:10:01-05:00" itemprop="datePublished" title="2017-01-22 23:10">2017-01-22 23:10</time></a></p>
+            <p class="byline author vcard"> <i class="fa fa-user"></i> <span class="byline-name fn" itemprop="author">
+                    George T. Silva
+            </span></p>
+                <p class="commentline"><i class="far fa-comment"></i>
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/exploring-arlingtons-bikeometer-data.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="index.ipynb" class="sourcelink"><i class="fa fa-file-code"></i> Source</a></p>
+
+            
+
+            
+
+        </div>
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Arlington, Virginia has this great Bikeometer on the Custis Trail in Rosslyn. This tall digital sign always catches my attention when I ride by it. It displays the number of bicycles that pass that sign daily, monthly and year to date. I discovered that this data is also available online. I decided to use my Python skills to import this data, clean it up, and do some basic analysis.<!-- TEASER_END --></p>
+<p>Accoring to Arlington's website, the Rosslyn Bikeometer, the first Eco-Totem on the east coast, launched April 1, 2014. Westbound Lee Highway near N Lynn Street, Rosslyn. Bicycle-only detection and display is in real time with direction detection, four pavement loops.  You can find out more about it at <a href="http://www.bikearlington.com/pages/biking-in-arlington/counting-bikes-to-plan-for-bikes/about-the-counters/">http://www.bikearlington.com/pages/biking-in-arlington/counting-bikes-to-plan-for-bikes/about-the-counters/</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>My first step in this project was to start this Python 3.5 Jupyter Notebook.  Then I import the libraries I plan to use for this project. They are as follows:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">xml.etree</span> <span class="k">import</span> <span class="n">ElementTree</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Then I created an API query to get the Rosslyn Bikeometer (counter number 28) from April 1, 2014 to January 1, 2017 for bicycles in the inbound direction.  For this first look at the data, I decided to only pull the daily totals. Using the url link, the following code uses Requests to get the url and save it to the local file, xml_data.xml. Arlington provides the details of their API at <a href="http://www.bikearlington.com/tasks/sites/bike/assets/File/Regional_bikearlington_webservices.pdf">http://www.bikearlington.com/tasks/sites/bike/assets/File/Regional_bikearlington_webservices.pdf</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">"http://webservices.commuterpage.com/counters.cfc?wsdl&amp;method=GetCountInDateRange&amp;counterid=28&amp;startDate=04/01/2014&amp;endDate=01/01/2017&amp;direction=I&amp;mode=B&amp;interval=d"</span>
+<span class="n">xmlfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'xml_data.xml'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+<span class="n">xmldata</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">xmlfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">xmldata</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">xmlfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">xml_data</span> <span class="o">=</span> <span class="s1">'xml_data.xml'</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I took the XML data file and parsed it with ElementTree.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">document</span> <span class="o">=</span> <span class="n">ElementTree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">xml_data</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After parsing the XML file, I pulled out the "count" data using document.find().</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cnt</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'count'</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Then you can extract the data using the attributes for count.  These include count, date, direction, and mode. For now, I only need count and date.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cnt</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">'count'</span><span class="p">]</span>
+<span class="n">cnt</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">'date'</span><span class="p">]</span>
+<span class="n">cnt</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">'direction'</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'I'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">date</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">count</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">document</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">'count'</span><span class="p">):</span>
+    <span class="n">date</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">day</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">'date'</span><span class="p">])</span>
+    <span class="n">count</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">day</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">'count'</span><span class="p">])</span>
+<span class="n">dfbikes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'date'</span> <span class="p">:</span> <span class="n">date</span><span class="p">,</span> <span class="s1">'count'</span><span class="p">:</span> <span class="n">count</span><span class="p">})</span>
+<span class="n">dfbikes</span><span class="p">[</span><span class="s1">'date'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">dfbikes</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
+<span class="n">dfbikes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[7]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>count</th>
+      <th>date</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>710</td>
+      <td>2014-04-01</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>688</td>
+      <td>2014-04-02</td>
+    </tr>
+<tr>
+<th>2</th>
+      <td>514</td>
+      <td>2014-04-03</td>
+    </tr>
+<tr>
+<th>3</th>
+      <td>424</td>
+      <td>2014-04-04</td>
+    </tr>
+<tr>
+<th>4</th>
+      <td>474</td>
+      <td>2014-04-05</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The above dataframe can then be merged with other data for each of the dates listed. You can speed up this process by making the date field the index.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfbikes</span> <span class="o">=</span> <span class="n">dfbikes</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"date"</span><span class="p">)</span>
+<span class="n">dfbikes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[8]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+      <th>count</th>
+    </tr>
+<tr>
+<th>date</th>
+      <th></th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<th>2014-04-01</th>
+      <td>710</td>
+    </tr>
+<tr>
+<th>2014-04-02</th>
+      <td>688</td>
+    </tr>
+<tr>
+<th>2014-04-03</th>
+      <td>514</td>
+    </tr>
+<tr>
+<th>2014-04-04</th>
+      <td>424</td>
+    </tr>
+<tr>
+<th>2014-04-05</th>
+      <td>474</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Adding-in-Weather-Data">Adding in Weather Data<a class="anchor-link" href="#Adding-in-Weather-Data">¶</a>
+</h3>
+<p>People typically consider weather conditions before deciding to take a bike trip. Thankfully, Arlington County also provides easy access to their local weather data via API.  The API details are provided below.</p>
+<p>Source: <a href="http://webservices.commuterpage.com/weatherdata.cfc?wsdl&amp;method=GetCodes">http://webservices.commuterpage.com/weatherdata.cfc?wsdl&amp;method=GetCodes</a></p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;weather_codes&gt;</span>
+<span class="nt">&lt;code</span> <span class="na">name=</span><span class="s">"dewpoint"</span> <span class="na">binary=</span><span class="s">"No"</span> <span class="na">cumulative=</span><span class="s">"No"</span> <span class="na">units=</span><span class="s">"°F"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;code</span> <span class="na">name=</span><span class="s">"fog"</span> <span class="na">binary=</span><span class="s">"Yes"</span> <span class="na">cumulative=</span><span class="s">"No"</span> <span class="na">units=</span><span class="s">""</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;code</span> <span class="na">name=</span><span class="s">"hail"</span> <span class="na">binary=</span><span class="s">"Yes"</span> <span class="na">cumulative=</span><span class="s">"No"</span> <span class="na">units=</span><span class="s">""</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;code</span> <span class="na">name=</span><span class="s">"rain"</span> <span class="na">binary=</span><span class="s">"Yes"</span> <span class="na">cumulative=</span><span class="s">"No"</span> <span class="na">units=</span><span class="s">""</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;code</span> <span class="na">name=</span><span class="s">"snow"</span> <span class="na">binary=</span><span class="s">"Yes"</span> <span class="na">cumulative=</span><span class="s">"No"</span> <span class="na">units=</span><span class="s">""</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;code</span> <span class="na">name=</span><span class="s">"thunder"</span> <span class="na">binary=</span><span class="s">"Yes"</span> <span class="na">cumulative=</span><span class="s">"No"</span> <span class="na">units=</span><span class="s">""</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;code</span> <span class="na">name=</span><span class="s">"tornado"</span> <span class="na">binary=</span><span class="s">"Yes"</span> <span class="na">cumulative=</span><span class="s">"No"</span> <span class="na">units=</span><span class="s">""</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;code</span> <span class="na">name=</span><span class="s">"humidity"</span> <span class="na">binary=</span><span class="s">"No"</span> <span class="na">cumulative=</span><span class="s">"No"</span> <span class="na">units=</span><span class="s">"%"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;code</span> <span class="na">name=</span><span class="s">"pressure"</span> <span class="na">binary=</span><span class="s">"No"</span> <span class="na">cumulative=</span><span class="s">"No"</span> <span class="na">units=</span><span class="s">"inHg"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;code</span> <span class="na">name=</span><span class="s">"temperature"</span> <span class="na">binary=</span><span class="s">"No"</span> <span class="na">cumulative=</span><span class="s">"No"</span> <span class="na">units=</span><span class="s">"°F"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;code</span> <span class="na">name=</span><span class="s">"visibility"</span> <span class="na">binary=</span><span class="s">"No"</span> <span class="na">cumulative=</span><span class="s">"No"</span> <span class="na">units=</span><span class="s">"miles"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;code</span> <span class="na">name=</span><span class="s">"windspeed"</span> <span class="na">binary=</span><span class="s">"No"</span> <span class="na">cumulative=</span><span class="s">"No"</span> <span class="na">units=</span><span class="s">"mph"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;code</span> <span class="na">name=</span><span class="s">"precipitation"</span> <span class="na">binary=</span><span class="s">"No"</span> <span class="na">cumulative=</span><span class="s">"Yes"</span> <span class="na">units=</span><span class="s">"inches"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/weather_codes&gt;</span>
+</pre></div>
+<p>Description: Returns the weather data based on the requested weather code and the
+date.
+Request Fields:
+• dates: string value, required field. Is a range of dates to retrieve the weather
+data, acceptable format yyyymmdd-yyyymmdd
+• code: string value, required field. Supply the available weather codes from the
+getcodes response.
+• function: string value, optional. Function to perform on the data (avg, sum, min,
+max); defaults to avg.
+• hours: string value, optional. Hours in 24-hour format (0-23); may be commadelimited
+list, hyphen-separated range, or special keywords "all" or "daytime"
+• dayLimiter: numeric value, optional. Day of the week. Sun to Sat – 1 to 7
+respectively, weekends – 8, sat &amp; sun – 9, All - 0. Defaults to All - 0.
+Example:
+<a href="http://webservices.commuterpage.com/weatherdata.cfc?wsdl&amp;method=GetData&amp;dates=20110301-20110305&amp;code=temperature">http://webservices.commuterpage.com/weatherdata.cfc?wsdl&amp;method=GetData&amp;dates=20110301-20110305&amp;code=temperature</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weatherapi_url</span> <span class="o">=</span> <span class="s2">"http://webservices.commuterpage.com/weatherdata.cfc?wsdl&amp;method=GetData&amp;dates=20140401-20170101&amp;code=temperature"</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xmlfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'xml_temps.xml'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+<span class="n">xmldata</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">weatherapi_url</span><span class="p">)</span>
+<span class="n">xmlfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">xmldata</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">xmlfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">xml_temps</span> <span class="o">=</span> <span class="s1">'xml_temps.xml'</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">document</span> <span class="o">=</span> <span class="n">ElementTree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">xml_temps</span><span class="p">)</span>
+<span class="n">date</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">document</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">'dataset/date'</span><span class="p">):</span>
+    <span class="n">date</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">day</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">'value'</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">document</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">'dataset/date/data'</span><span class="p">):</span>
+    <span class="n">temp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">day</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">'value'</span><span class="p">])</span>
+<span class="n">dftemperature</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'date'</span> <span class="p">:</span> <span class="n">date</span><span class="p">,</span> <span class="s1">'temperature'</span> <span class="p">:</span> <span class="n">temp</span><span class="p">})</span>
+<span class="n">dftemperature</span><span class="p">[</span><span class="s1">'date'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">dftemperature</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
+<span class="n">dftemperature</span> <span class="o">=</span> <span class="n">dftemperature</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"date"</span><span class="p">)</span>
+<span class="n">dftemperature</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[13]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+      <th>temperature</th>
+    </tr>
+<tr>
+<th>date</th>
+      <th></th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<th>2015-01-01</th>
+      <td>36.6</td>
+    </tr>
+<tr>
+<th>2016-01-01</th>
+      <td>41.9</td>
+    </tr>
+<tr>
+<th>2017-01-01</th>
+      <td>46.3</td>
+    </tr>
+<tr>
+<th>2015-01-02</th>
+      <td>41.4</td>
+    </tr>
+<tr>
+<th>2016-01-02</th>
+      <td>40.2</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">dfbikes</span><span class="p">,</span> <span class="n">dftemperature</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[14]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+      <th>count</th>
+      <th>temperature</th>
+    </tr>
+<tr>
+<th>date</th>
+      <th></th>
+      <th></th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<th>2014-04-01</th>
+      <td>710</td>
+      <td>54.0</td>
+    </tr>
+<tr>
+<th>2014-04-02</th>
+      <td>688</td>
+      <td>55.3</td>
+    </tr>
+<tr>
+<th>2014-04-03</th>
+      <td>514</td>
+      <td>59.8</td>
+    </tr>
+<tr>
+<th>2014-04-04</th>
+      <td>424</td>
+      <td>55.1</td>
+    </tr>
+<tr>
+<th>2014-04-05</th>
+      <td>474</td>
+      <td>53.0</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Add-in-wind-and-precipitation">Add in wind and precipitation<a class="anchor-link" href="#Add-in-wind-and-precipitation">¶</a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weatherapi_url</span> <span class="o">=</span> <span class="s2">"http://webservices.commuterpage.com/weatherdata.cfc?wsdl&amp;method=GetData&amp;dates=20140401-20170101&amp;code=windspeed"</span>
+
+<span class="n">xmlfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'xml_wind.xml'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+<span class="n">xmldata</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">weatherapi_url</span><span class="p">)</span>
+<span class="n">xmlfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">xmldata</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">xmlfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">xml_wind</span> <span class="o">=</span> <span class="s1">'xml_wind.xml'</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">document</span> <span class="o">=</span> <span class="n">ElementTree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">xml_wind</span><span class="p">)</span>
+<span class="n">date</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">wind</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">document</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">'dataset/date'</span><span class="p">):</span>
+    <span class="n">date</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">day</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">'value'</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">document</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">'dataset/date/data'</span><span class="p">):</span>
+    <span class="n">wind</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">day</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">'value'</span><span class="p">])</span>
+<span class="n">dfwind</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'date'</span> <span class="p">:</span> <span class="n">date</span><span class="p">,</span> <span class="s1">'windspeed'</span> <span class="p">:</span> <span class="n">wind</span><span class="p">})</span>
+<span class="n">dfwind</span><span class="p">[</span><span class="s1">'date'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">dfwind</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
+<span class="n">dfwind</span> <span class="o">=</span> <span class="n">dfwind</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"date"</span><span class="p">)</span>
+<span class="n">dfwind</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[17]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+      <th>windspeed</th>
+    </tr>
+<tr>
+<th>date</th>
+      <th></th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<th>2014-04-01</th>
+      <td>6</td>
+    </tr>
+<tr>
+<th>2014-04-02</th>
+      <td>3</td>
+    </tr>
+<tr>
+<th>2014-04-03</th>
+      <td>3</td>
+    </tr>
+<tr>
+<th>2014-04-04</th>
+      <td>7</td>
+    </tr>
+<tr>
+<th>2014-04-05</th>
+      <td>9</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weatherapi_url</span> <span class="o">=</span> <span class="s2">"http://webservices.commuterpage.com/weatherdata.cfc?wsdl&amp;method=GetData&amp;dates=20140401-20170101&amp;code=precipitation"</span>
+
+<span class="n">xmlfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'xml_precip.xml'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span>
+<span class="n">xmldata</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">weatherapi_url</span><span class="p">)</span>
+<span class="n">xmlfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">xmldata</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="n">xmlfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="n">xml_precip</span> <span class="o">=</span> <span class="s1">'xml_precip.xml'</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">document</span> <span class="o">=</span> <span class="n">ElementTree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">xml_precip</span><span class="p">)</span>
+<span class="n">date</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">precip</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">document</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">'dataset/date'</span><span class="p">):</span>
+    <span class="n">date</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">day</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">'value'</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">document</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">'dataset/date/data'</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">day</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">'value'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'T'</span><span class="p">:</span>
+        <span class="n">precip</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">day</span><span class="o">.</span><span class="n">attrib</span><span class="p">[</span><span class="s1">'value'</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">precip</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">dfprecip</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'date'</span> <span class="p">:</span> <span class="n">date</span><span class="p">,</span> <span class="s1">'precipitation'</span> <span class="p">:</span> <span class="n">precip</span><span class="p">})</span>
+<span class="n">dfprecip</span><span class="p">[</span><span class="s1">'date'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">dfprecip</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
+<span class="n">dfprecip</span> <span class="o">=</span> <span class="n">dfprecip</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"date"</span><span class="p">)</span>
+<span class="n">dfprecip</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[20]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+      <th>precipitation</th>
+    </tr>
+<tr>
+<th>date</th>
+      <th></th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<th>2014-04-01</th>
+      <td>0.00</td>
+    </tr>
+<tr>
+<th>2014-04-02</th>
+      <td>0.00</td>
+    </tr>
+<tr>
+<th>2014-04-03</th>
+      <td>0</td>
+    </tr>
+<tr>
+<th>2014-04-04</th>
+      <td>0.06</td>
+    </tr>
+<tr>
+<th>2014-04-05</th>
+      <td>0.01</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bikedataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">dfbikes</span><span class="p">,</span> <span class="n">dftemperature</span><span class="p">,</span> <span class="n">dfwind</span><span class="p">,</span> <span class="n">dfprecip</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">bikedataframe</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[21]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+      <th>count</th>
+      <th>temperature</th>
+      <th>windspeed</th>
+      <th>precipitation</th>
+    </tr>
+<tr>
+<th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<th>2014-04-01</th>
+      <td>710</td>
+      <td>54.0</td>
+      <td>6</td>
+      <td>0.00</td>
+    </tr>
+<tr>
+<th>2014-04-02</th>
+      <td>688</td>
+      <td>55.3</td>
+      <td>3</td>
+      <td>0.00</td>
+    </tr>
+<tr>
+<th>2014-04-03</th>
+      <td>514</td>
+      <td>59.8</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>2014-04-04</th>
+      <td>424</td>
+      <td>55.1</td>
+      <td>7</td>
+      <td>0.06</td>
+    </tr>
+<tr>
+<th>2014-04-05</th>
+      <td>474</td>
+      <td>53.0</td>
+      <td>9</td>
+      <td>0.01</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bikedataframe</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">weekday_name</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[22]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'Tuesday'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bikedataframe</span><span class="p">[</span><span class="s2">"dayofweek"</span><span class="p">]</span> <span class="o">=</span> <span class="n">bikedataframe</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">dayofweek</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bikedataframe</span> <span class="o">=</span> <span class="n">bikedataframe</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">bikedataframe</span><span class="p">[</span><span class="s2">"weekday"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">bikedataframe</span><span class="p">[</span><span class="s1">'weekday'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">bikedataframe</span><span class="p">[</span><span class="s1">'dayofweek'</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">bikedataframe</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[24]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+      <th>count</th>
+      <th>temperature</th>
+      <th>windspeed</th>
+      <th>precipitation</th>
+      <th>dayofweek</th>
+      <th>weekday</th>
+    </tr>
+<tr>
+<th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<th>2014-04-01</th>
+      <td>710.0</td>
+      <td>54.0</td>
+      <td>6.0</td>
+      <td>0.00</td>
+      <td>1.0</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>2014-04-02</th>
+      <td>688.0</td>
+      <td>55.3</td>
+      <td>3.0</td>
+      <td>0.00</td>
+      <td>2.0</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>2014-04-03</th>
+      <td>514.0</td>
+      <td>59.8</td>
+      <td>3.0</td>
+      <td>0.00</td>
+      <td>3.0</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>2014-04-04</th>
+      <td>424.0</td>
+      <td>55.1</td>
+      <td>7.0</td>
+      <td>0.06</td>
+      <td>4.0</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>2014-04-05</th>
+      <td>474.0</td>
+      <td>53.0</td>
+      <td>9.0</td>
+      <td>0.01</td>
+      <td>5.0</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>2014-04-06</th>
+      <td>553.0</td>
+      <td>50.1</td>
+      <td>6.0</td>
+      <td>0.00</td>
+      <td>6.0</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>2014-04-07</th>
+      <td>165.0</td>
+      <td>51.0</td>
+      <td>6.0</td>
+      <td>0.38</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>2014-04-08</th>
+      <td>560.0</td>
+      <td>57.7</td>
+      <td>7.0</td>
+      <td>0.04</td>
+      <td>1.0</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>2014-04-09</th>
+      <td>653.0</td>
+      <td>57.3</td>
+      <td>7.0</td>
+      <td>0.00</td>
+      <td>2.0</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>2014-04-10</th>
+      <td>809.0</td>
+      <td>60.1</td>
+      <td>6.0</td>
+      <td>0.00</td>
+      <td>3.0</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>2014-04-11</th>
+      <td>627.0</td>
+      <td>68.0</td>
+      <td>10.0</td>
+      <td>0.00</td>
+      <td>4.0</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>2014-04-12</th>
+      <td>973.0</td>
+      <td>66.9</td>
+      <td>5.0</td>
+      <td>0.00</td>
+      <td>5.0</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>2014-04-13</th>
+      <td>926.0</td>
+      <td>70.1</td>
+      <td>8.0</td>
+      <td>0.00</td>
+      <td>6.0</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>2014-04-14</th>
+      <td>675.0</td>
+      <td>72.0</td>
+      <td>15.0</td>
+      <td>0.06</td>
+      <td>0.0</td>
+      <td>1</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bikedataframe</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[24]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>count            426.203980
+temperature       61.207562
+windspeed          7.176471
+precipitation      0.112159
+dayofweek          3.002979
+weekday            0.714002
+dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you can see from the mean data above, the average number of inbound bike trips per day was 426. It would then be interesting to see which days of the week had higher or lower than average bike usage.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bikedataframe</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'dayofweek'</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[25]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+      <th>count</th>
+      <th>temperature</th>
+      <th>windspeed</th>
+      <th>precipitation</th>
+      <th>weekday</th>
+    </tr>
+<tr>
+<th>dayofweek</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<th>0.0</th>
+      <td>469.552448</td>
+      <td>61.428671</td>
+      <td>7.226950</td>
+      <td>0.126667</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>1.0</th>
+      <td>478.187500</td>
+      <td>62.140278</td>
+      <td>7.062500</td>
+      <td>0.169097</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>2.0</th>
+      <td>473.333333</td>
+      <td>61.881119</td>
+      <td>6.832168</td>
+      <td>0.139792</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>3.0</th>
+      <td>442.118881</td>
+      <td>61.536364</td>
+      <td>7.132867</td>
+      <td>0.105347</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>4.0</th>
+      <td>426.629371</td>
+      <td>60.450694</td>
+      <td>7.625000</td>
+      <td>0.070764</td>
+      <td>1</td>
+    </tr>
+<tr>
+<th>5.0</th>
+      <td>325.013889</td>
+      <td>60.023611</td>
+      <td>7.256944</td>
+      <td>0.121736</td>
+      <td>0</td>
+    </tr>
+<tr>
+<th>6.0</th>
+      <td>369.006944</td>
+      <td>61.000694</td>
+      <td>7.097222</td>
+      <td>0.052014</td>
+      <td>0</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It looks like Monday (dayofweek = 0) through Thursday (dayofweek = 4) has higher than average usage and Saturday has the lowest average number of bike trips. It seems there might be a significant difference between weekday and weekend bike usage on the Custis Trail.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">week_versus_end</span> <span class="o">=</span> <span class="n">bikedataframe</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'weekday'</span><span class="p">)</span>
+<span class="n">week_versus_end</span><span class="p">[</span><span class="s1">'count'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[26]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>weekday
+0    347.010417
+1    458.013947
+Name: count, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The average daily weekday number of inbound bike trips was 458 versus just 347 per day on the weekends.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">week_versus_end</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[27]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+      <th>count</th>
+      <th>temperature</th>
+      <th>windspeed</th>
+      <th>precipitation</th>
+      <th>dayofweek</th>
+    </tr>
+<tr>
+<th>weekday</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>0.0</td>
+      <td>15.9</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>5.0</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>2.0</td>
+      <td>14.1</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">week_versus_end</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[28]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+      <th>count</th>
+      <th>temperature</th>
+      <th>windspeed</th>
+      <th>precipitation</th>
+      <th>dayofweek</th>
+    </tr>
+<tr>
+<th>weekday</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+      <td>973.0</td>
+      <td>90.1</td>
+      <td>21.0</td>
+      <td>2.75</td>
+      <td>6.0</td>
+    </tr>
+<tr>
+<th>1</th>
+      <td>989.0</td>
+      <td>89.2</td>
+      <td>16.0</td>
+      <td>2.70</td>
+      <td>4.0</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">bp</span> <span class="o">=</span> <span class="n">week_versus_end</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s1">'count'</span><span class="p">,</span> <span class="n">return_type</span><span class="o">=</span><span class="s1">'axes'</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+
+<div class="output_text output_subarea ">
+<pre>&lt;matplotlib.figure.Figure at 0xbb988d0&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+<div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The boxplot of the left clearly shows that on average there are fewer bike trips on the weekend days versus weekdays. However, there are some weekend day outliers that are almost just as high as the weekday extreme usage days. There seems to be a daily maximum capacity for the trail around 1,000 inbound trips. It makes me think some of these extremely high outliers are associated with events.</p>
+<p>My next steps will be to explore these extreme outliers, dig further into the temperature, wind and precipitation data. Ultimately, I want to build a model that can predict daily bike trips on this part of the Custis Trail.</p>
+
+</div>
+</div>
+</div>
+    </div>
+  </div>
+
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../about-george-t-silva/" rel="prev" title="About George T. Silva">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../mapping-points-with-folium/" rel="next" title="Mapping Points with Folium">Next post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="data-econoscientist",
+            disqus_url="https://georgetsilva.github.io/posts/exploring-arlingtons-bikeometer-data/",
+        disqus_title="Exploring Arlington's Bikeometer Data",
+        disqus_identifier="cache/posts/exploring-arlingtons-bikeometer-data.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script></article><script>var disqus_shortname="data-econoscientist";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2019         <a href="mailto:dataeconoscientist@gmail.com">George T. Silva</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
+</div>
+    </section><script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(2, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-91314912-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

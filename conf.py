@@ -142,9 +142,9 @@ NAVIGATION_LINKS = {
         ('/archive.html', 'Archives', 'fa fa-folder-open'),
         ('/categories/index.html', 'Tags', 'fa fa-tags'),
         ('/posts/about-george-t-silva/', 'About George T. Silva', 'fa fa-user'),
-        ('https://www.linkedin.com/in/georgesilva1', 'My LinkedIn', 'fa fa-linkedin-in'),
-        ('https://twitter.com/georges083', 'My Twitter', 'fa fa-twitter'),
-        ('https://github.com/georgetsilva', 'My Github', 'fa fa-github'),
+        ('https://www.linkedin.com/in/georgesilva1', 'My LinkedIn', 'fab fa-linkedin-in'),
+        ('https://twitter.com/georges083', 'My Twitter', 'fab fa-twitter'),
+        ('https://github.com/georgetsilva', 'My Github', 'fab fa-github'),
         ('/rss.xml', 'RSS', 'fa fa-rss'),
     ),
 }

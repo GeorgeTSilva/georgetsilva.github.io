@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS=false; L_NO_TOUCH=false; L_DISABLE_3D=false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.3.4/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.3.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>#map_82d7dd56d6ac47df911f53cd41097f82 {
+        position: relative;
+        width: 100.0%;
+        height: 100.0%;
+        left: 0.0%;
+        top: 0.0%;
+        }
+    </style>
+</head>
+<body>    
+    
+    <div class="folium-map" id="map_82d7dd56d6ac47df911f53cd41097f82" ></div>
+</body>
+<script>    
+    
+    
+        var bounds = null;
+    
+
+    var map_82d7dd56d6ac47df911f53cd41097f82 = L.map(
+        'map_82d7dd56d6ac47df911f53cd41097f82', {
+        center: [0, 0],
+        zoom: 1,
+        maxBounds: bounds,
+        layers: [],
+        worldCopyJump: false,
+        crs: L.CRS.EPSG3857,
+        zoomControl: true,
+        });
+
+    
+    
+    var tile_layer_19ff4169e781409fb4f1a5938079cd12 = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+        "attribution": null,
+        "detectRetina": false,
+        "maxNativeZoom": 18,
+        "maxZoom": 18,
+        "minZoom": 0,
+        "noWrap": false,
+        "opacity": 1,
+        "subdomains": "abc",
+        "tms": false
+}).addTo(map_82d7dd56d6ac47df911f53cd41097f82);
+    
+        var marker_2913139ec85a4380a3aa4323feaad166 = L.marker(
+            [40.482185, -106.830005],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_82d7dd56d6ac47df911f53cd41097f82);
+        
+    
+            var popup_c36086d77ce544fca4071aecf711640d = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_896c84fe2c4d476da625e2f64776e9d7 = $(`<div id="html_896c84fe2c4d476da625e2f64776e9d7" style="width: 100.0%; height: 100.0%;"><p style="font-weight: bold; font-size: 160%;">This is the start of Yampa Street:  What do you want to see here?</p><p style="font-size: 160%;">Add your comments and photos on our <a href="https://www.facebook.com/MainstreetSteamboat/" target="_blank">Facebook Page</a>.</p><p><img src="steamboat.png" alt="Main Street Steamboat Springs logo" width="250 px"></p> <p style="font-weight: bold; font-size: 160%;"><a href="https://www.surveymonkey.com/r/YampaRE" target="_blank">Take the survey</a></p><p><a href="https://www.surveymonkey.com/r/YampaRE" target="_blank"><img src="QR_code_YampaRE.png" alt="QR code" width="250 px"></a></p></div>`)[0];
+                popup_c36086d77ce544fca4071aecf711640d.setContent(html_896c84fe2c4d476da625e2f64776e9d7);
+            
+
+            marker_2913139ec85a4380a3aa4323feaad166.bindPopup(popup_c36086d77ce544fca4071aecf711640d)
+            ;
+
+            
+        
+    
+        var marker_480ccf5ee8074c90b9fe6e02940b3825 = L.marker(
+            [40.487809999999996, -106.83966699999999],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_82d7dd56d6ac47df911f53cd41097f82);
+        
+    
+            var popup_8693757a41c24b7bac6da56a4849dd34 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_b5362fc74b1844c1b81b0000ebc93bb8 = $(`<div id="html_b5362fc74b1844c1b81b0000ebc93bb8" style="width: 100.0%; height: 100.0%;"><p style="font-weight: bold; font-size: 160%;">This is the end of Yampa Street:  What do you want to see here?</p><p style="font-size: 160%;">Add your comments and photos on our <a href="https://www.facebook.com/MainstreetSteamboat/" target="_blank">Facebook Page</a>.</p><p><img src="steamboat.png" alt="Main Street Steamboat Springs logo" width="250 px"></p> <p style="font-weight: bold; font-size: 160%;"><a href="https://www.surveymonkey.com/r/YampaRE" target="_blank">Take the survey</a></p><p><a href="https://www.surveymonkey.com/r/YampaRE" target="_blank"><img src="QR_code_YampaRE.png" alt="QR code" width="250 px"></a></p></div>`)[0];
+                popup_8693757a41c24b7bac6da56a4849dd34.setContent(html_b5362fc74b1844c1b81b0000ebc93bb8);
+            
+
+            marker_480ccf5ee8074c90b9fe6e02940b3825.bindPopup(popup_8693757a41c24b7bac6da56a4849dd34)
+            ;
+
+            
+        
+    
+        var marker_73e253f672cd40039bf4434536770e4d = L.marker(
+            [40.483196, -106.832457],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_82d7dd56d6ac47df911f53cd41097f82);
+        
+    
+            var popup_f25727dcf36140339f99009b9ccc776e = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_b0b0167cee5b4f0b9b4eb9c46e8dae06 = $(`<div id="html_b0b0167cee5b4f0b9b4eb9c46e8dae06" style="width: 100.0%; height: 100.0%;"><p style="font-weight: bold; font-size: 160%;">How can we improve this access to Howelsen Hill?</p><p style="font-size: 160%;">Add your comments and photos on our <a href="https://www.facebook.com/MainstreetSteamboat/" target="_blank">Facebook Page</a>.</p><p><img src="steamboat.png" alt="Main Street Steamboat Springs logo" width="250 px"></p> <p style="font-weight: bold; font-size: 160%;"><a href="https://www.surveymonkey.com/r/YampaRE" target="_blank">Take the survey</a></p><p><a href="https://www.surveymonkey.com/r/YampaRE" target="_blank"><img src="QR_code_YampaRE.png" alt="QR code" width="250 px"></a></p></div>`)[0];
+                popup_f25727dcf36140339f99009b9ccc776e.setContent(html_b0b0167cee5b4f0b9b4eb9c46e8dae06);
+            
+
+            marker_73e253f672cd40039bf4434536770e4d.bindPopup(popup_f25727dcf36140339f99009b9ccc776e)
+            ;
+
+            
+        
+    
+        var marker_420138c9d7974a1f8342c537eaf2e545 = L.marker(
+            [40.484680499999996, -106.8344002],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_82d7dd56d6ac47df911f53cd41097f82);
+        
+    
+            var popup_475ed4ec3d934a7ea28aea31904afbde = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_7d050692e7a44861909857fffb0e510f = $(`<div id="html_7d050692e7a44861909857fffb0e510f" style="width: 100.0%; height: 100.0%;"><p style="font-weight: bold; font-size: 160%;">Is this a good place for another river crossing?</p><p style="font-size: 160%;">Add your comments and photos on our <a href="https://www.facebook.com/MainstreetSteamboat/" target="_blank">Facebook Page</a>.</p><p><img src="steamboat.png" alt="Main Street Steamboat Springs logo" width="250 px"></p> <p style="font-weight: bold; font-size: 160%;"><a href="https://www.surveymonkey.com/r/YampaRE" target="_blank">Take the survey</a></p><p><a href="https://www.surveymonkey.com/r/YampaRE" target="_blank"><img src="QR_code_YampaRE.png" alt="QR code" width="250 px"></a></p></div>`)[0];
+                popup_475ed4ec3d934a7ea28aea31904afbde.setContent(html_7d050692e7a44861909857fffb0e510f);
+            
+
+            marker_420138c9d7974a1f8342c537eaf2e545.bindPopup(popup_475ed4ec3d934a7ea28aea31904afbde)
+            ;
+
+            
+        
+    
+        var marker_ecf893d884214ee783522e92ae00baba = L.marker(
+            [40.485006, -106.8349346],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_82d7dd56d6ac47df911f53cd41097f82);
+        
+    
+            var popup_275e09dd6ab74935baf8678ffc4c35eb = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_0f7bc36747a94b4e83bac393aec85e39 = $(`<div id="html_0f7bc36747a94b4e83bac393aec85e39" style="width: 100.0%; height: 100.0%;"><p style="font-weight: bold; font-size: 160%;">What kinds of gathering spots – to sit and linger – would you like to see on Yampa Street?</p><p style="font-size: 160%;">Add your comments and photos on our <a href="https://www.facebook.com/MainstreetSteamboat/" target="_blank">Facebook Page</a>.</p><p><img src="steamboat.png" alt="Main Street Steamboat Springs logo" width="250 px"></p> <p style="font-weight: bold; font-size: 160%;"><a href="https://www.surveymonkey.com/r/YampaRE" target="_blank">Take the survey</a></p><p><a href="https://www.surveymonkey.com/r/YampaRE" target="_blank"><img src="QR_code_YampaRE.png" alt="QR code" width="250 px"></a></p></div>`)[0];
+                popup_275e09dd6ab74935baf8678ffc4c35eb.setContent(html_0f7bc36747a94b4e83bac393aec85e39);
+            
+
+            marker_ecf893d884214ee783522e92ae00baba.bindPopup(popup_275e09dd6ab74935baf8678ffc4c35eb)
+            ;
+
+            
+        
+    
+        var marker_edc6070634d64a48806825d18cf31f64 = L.marker(
+            [40.485961700000004, -106.8365574],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_82d7dd56d6ac47df911f53cd41097f82);
+        
+    
+            var popup_2f4480d0ecad4323b189c6f7ea3a61a5 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_efc6e64c8d0847e0be753079fa05f362 = $(`<div id="html_efc6e64c8d0847e0be753079fa05f362" style="width: 100.0%; height: 100.0%;"><p style="font-weight: bold; font-size: 160%;">Would you support closing Yampa Street to traffic for certain events?</p><p style="font-size: 160%;">Add your comments and photos on our <a href="https://www.facebook.com/MainstreetSteamboat/" target="_blank">Facebook Page</a>.</p><p><img src="steamboat.png" alt="Main Street Steamboat Springs logo" width="250 px"></p> <p style="font-weight: bold; font-size: 160%;"><a href="https://www.surveymonkey.com/r/YampaRE" target="_blank">Take the survey</a></p><p><a href="https://www.surveymonkey.com/r/YampaRE" target="_blank"><img src="QR_code_YampaRE.png" alt="QR code" width="250 px"></a></p></div>`)[0];
+                popup_2f4480d0ecad4323b189c6f7ea3a61a5.setContent(html_efc6e64c8d0847e0be753079fa05f362);
+            
+
+            marker_edc6070634d64a48806825d18cf31f64.bindPopup(popup_2f4480d0ecad4323b189c6f7ea3a61a5)
+            ;
+
+            
+        
+    
+        var marker_1afac4c966bd40c38bcea5eb7e3e090f = L.marker(
+            [40.4865669, -106.83762409999999],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_82d7dd56d6ac47df911f53cd41097f82);
+        
+    
+            var popup_d1d77ccbd62f4d0386f2f8db8e11ef8e = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_743b3e6c4f3041d78a1a97e7d0e36b2e = $(`<div id="html_743b3e6c4f3041d78a1a97e7d0e36b2e" style="width: 100.0%; height: 100.0%;"><p style="font-weight: bold; font-size: 160%;">What would be other good places to connect to the Core Trail?</p><p style="font-size: 160%;">Add your comments and photos on our <a href="https://www.facebook.com/MainstreetSteamboat/" target="_blank">Facebook Page</a>.</p><p><img src="steamboat.png" alt="Main Street Steamboat Springs logo" width="250 px"></p> <p style="font-weight: bold; font-size: 160%;"><a href="https://www.surveymonkey.com/r/YampaRE" target="_blank">Take the survey</a></p><p><a href="https://www.surveymonkey.com/r/YampaRE" target="_blank"><img src="QR_code_YampaRE.png" alt="QR code" width="250 px"></a></p></div>`)[0];
+                popup_d1d77ccbd62f4d0386f2f8db8e11ef8e.setContent(html_743b3e6c4f3041d78a1a97e7d0e36b2e);
+            
+
+            marker_1afac4c966bd40c38bcea5eb7e3e090f.bindPopup(popup_d1d77ccbd62f4d0386f2f8db8e11ef8e)
+            ;
+
+            
+        
+    
+        var marker_55942a25905d497fa4dc285848baf76a = L.marker(
+            [40.484010999999995, -106.833307],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_82d7dd56d6ac47df911f53cd41097f82);
+        
+    
+            var popup_4da4427678034ff3985e36068f3d5116 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_9fd64a17bea94d628457e7283537fcba = $(`<div id="html_9fd64a17bea94d628457e7283537fcba" style="width: 100.0%; height: 100.0%;"><p style="font-weight: bold; font-size: 160%;">What are some of your favorite things about Yampa Street?</p><p style="font-size: 160%;">Add your comments and photos on our <a href="https://www.facebook.com/MainstreetSteamboat/" target="_blank">Facebook Page</a>.</p><p><img src="steamboat.png" alt="Main Street Steamboat Springs logo" width="250 px"></p> <p style="font-weight: bold; font-size: 160%;"><a href="https://www.surveymonkey.com/r/YampaRE" target="_blank">Take the survey</a></p><p><a href="https://www.surveymonkey.com/r/YampaRE" target="_blank"><img src="QR_code_YampaRE.png" alt="QR code" width="250 px"></a></p></div>`)[0];
+                popup_4da4427678034ff3985e36068f3d5116.setContent(html_9fd64a17bea94d628457e7283537fcba);
+            
+
+            marker_55942a25905d497fa4dc285848baf76a.bindPopup(popup_4da4427678034ff3985e36068f3d5116)
+            ;
+
+            
+        
+    
+                
+
+                map_82d7dd56d6ac47df911f53cd41097f82.fitBounds(
+                    [[40.482185, -106.83966699999999], [40.487809999999996, -106.830005]],
+                    {}
+                    );
+            
+</script>

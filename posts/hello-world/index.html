@@ -26,6 +26,7 @@ I'm looking forward to exploring this rela">
 </head>
 <body>
     <a href="#page-content" class="sr-only sr-only-focusable">Skip to main content</a>
+    
     <section class="social"><ul>
 <li><a href="../../index.html" title="Home"><i class="fa fa-home"></i></a></li>
             <li><a href="../../archive.html" title="Archives"><i class="fa fa-folder-open"></i></a></li>
@@ -48,7 +49,7 @@ I'm looking forward to exploring this rela">
                     George T. Silva
             </span></p>
                 <p class="commentline"><i class="far fa-comment"></i>
-        
+    
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/hello-world.html">Comments</a>
 
 
@@ -69,10 +70,8 @@ I'm looking forward to exploring this rela">
 
         </div>
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p>Hello world! This is my first post using <strong>Nikola</strong>. I'll be sharing my data science discoveries using Jupyter Notebooks that display my Python code and results.</p>
+    <p>Hello world! This is my first post using <strong>Nikola</strong>. I'll be sharing my data science discoveries using Jupyter Notebooks that display my Python code and results.</p>
 <p>I'm looking forward to exploring this relatively new field and applying it to my domain knowledge in resource economics.</p>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="next">
@@ -80,7 +79,7 @@ I'm looking forward to exploring this rela">
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
-        
+    
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="data-econoscientist",
@@ -104,9 +103,9 @@ I'm looking forward to exploring this rela">
             
         </footer>
 </div>
-    </section><script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(2, "YYYY-MM-DD HH:mm");
+    </section><script src="../../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
+    luxon.Settings.defaultLocale = "en";
+    fancydates(2, {"preset": false, "format": "yyyy-MM-dd HH:mm"});
     </script><!-- end fancy dates --><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',

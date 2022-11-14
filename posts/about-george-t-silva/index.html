@@ -28,6 +28,7 @@ s">
 </head>
 <body>
     <a href="#page-content" class="sr-only sr-only-focusable">Skip to main content</a>
+    
     <section class="social"><ul>
 <li><a href="../../index.html" title="Home"><i class="fa fa-home"></i></a></li>
             <li><a href="../../archive.html" title="Archives"><i class="fa fa-folder-open"></i></a></li>
@@ -50,7 +51,7 @@ s">
                     George T. Silva
             </span></p>
                 <p class="commentline"><i class="far fa-comment"></i>
-        
+    
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/about-george-t-silva.html">Comments</a>
 
 
@@ -64,8 +65,7 @@ s">
 
         </div>
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p>I'm a resource economist with a passion for data analysis and
+    <p>I'm a resource economist with a passion for data analysis and
 technology. Over the past few years, I've watch the development of the
 data science field and I've become increasingly interested in the
 subject. Data science seems to complement the tools economists use to
@@ -90,7 +90,6 @@ work done.</p>
 techniques in data science to create some whole new methods for using
 data to learn about the world. Maybe I'll become a Data EconoScientist
 along the way.</p>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="previous">
@@ -101,7 +100,7 @@ along the way.</p>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
-        
+    
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="data-econoscientist",
@@ -125,9 +124,9 @@ along the way.</p>
             
         </footer>
 </div>
-    </section><script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(2, "YYYY-MM-DD HH:mm");
+    </section><script src="../../assets/js/all-nocdn.js"></script><script src="https://polyfill.io/v3/polyfill.js?features=Intl.RelativeTimeFormat.%7Elocale.en"></script><script src="../../assets/js/luxon.min.js"></script><!-- fancy dates --><script>
+    luxon.Settings.defaultLocale = "en";
+    fancydates(2, {"preset": false, "format": "yyyy-MM-dd HH:mm"});
     </script><!-- end fancy dates --><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',

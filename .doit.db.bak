@@ -141,7 +141,7 @@
 'post_render', (11776, 56)
 'copy_assets:output\\assets\\js\\html5.js', (727552, 573)
 'copy_assets:output\\assets\\css\\images\\ie6\\borderBottomCenter.png', (86528, 474)
-'sitemap:output\\sitemap.xml', (851456, 6147)
+'sitemap:output\\sitemap.xml', (851456, 6151)
 'create_bundles:output\\assets\\js\\all.js', (58368, 606)
 'copy_assets:output\\assets\\js\\colorbox-i18n\\jquery.colorbox-gr.js', (57856, 474)
 'render_pages', (88576, 56)
